@@ -30,7 +30,7 @@ func New(cnf Config)   {
 	sclient.request.TemplateCode = cnf.TemplateCode
 }
 
-func  SendSms(PhoneNumbers string, code string) {
+func  SendSms(PhoneNumbers string, code string) error {
 	sclient.request.PhoneNumbers = PhoneNumbers
 	sclient.request.TemplateParam ="{\"code\":" + code  + "}"  //短信模板中的验证码内容 自己生成   之前试过直接返回，但是失败，加上code成功。
 
@@ -38,5 +38,5 @@ func  SendSms(PhoneNumbers string, code string) {
 	if err != nil {
 		fmt.Printf(err.Error(), "response is %#v\n", response)
 	}
-
+    return err
 }
