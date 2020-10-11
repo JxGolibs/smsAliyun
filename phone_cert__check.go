@@ -7,6 +7,8 @@ import (
 	"net/http"
 )
 
+// 三网手机号实名校验-手机三要素验证-运营商手机实名验证
+// https://market.aliyun.com/products/57000002/cmapi017873.html?spm=5176.2020520132.101.9.604e72184px3F4#sku=yuncode1187300005
 //电话号码实名验证
 func PhoneCertCheck(realName, cardNo, phone, appcode string) error {
 	req, err := http.NewRequest("GET", "https://auditphone.showapi.com/phoneAudit", nil)
